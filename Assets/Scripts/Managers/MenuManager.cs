@@ -27,16 +27,23 @@ public class MenuManager : MonoBehaviour
     public void LoadScene()
     {
         Global.nivelMaximo = PlayerPrefs.GetInt("LevelMax");
-        SceneManager.LoadScene(Global.nivelMaximo);
+        SceneManager.LoadScene(3);
+
+        SFXManager.Instance.CuentaRegresivaSound();
+        SoundManager.Instance.SeleccionAudio(1);
 
     }
 
     public void StartGame()
     {
         //GameManager.Instance.LevelFinisher();
-        Global.nivelMaximo = 3;
-        SceneManager.LoadScene(Global.nivelMaximo);
+        Global.nivelMaximo = 0;
+        
         PlayerPrefs.SetInt("LevelMax",Global.nivelMaximo);
+        SceneManager.LoadScene(3 + Global.nivelMaximo);
+
+        SFXManager.Instance.CuentaRegresivaSound();
+        SoundManager.Instance.SeleccionAudio(1);
     }
 
     public void QuitGame()

@@ -2073,6 +2073,26 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4101669964294000595, guid: 69231fba84b70ff49a4b2318b5d91bc4, type: 3}
   m_PrefabInstance: {fileID: 770068720}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &687806210
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687806207}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aeb6a0395ec7b4e46af2a0650b4e0a88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &755644454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,10 +2265,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BotonesMenu (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4101669964294000594, guid: 69231fba84b70ff49a4b2318b5d91bc4, type: 3}
-      propertyPath: m_Maskable
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4101669964294000595, guid: 69231fba84b70ff49a4b2318b5d91bc4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2346,7 +2362,7 @@ PrefabInstance:
       value: OpenLevels
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 4101669964294000594, guid: 69231fba84b70ff49a4b2318b5d91bc4, type: 3}
+    - {fileID: 4101669963432312193, guid: 69231fba84b70ff49a4b2318b5d91bc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 69231fba84b70ff49a4b2318b5d91bc4, type: 3}
 --- !u!64 &857363632
 MeshCollider:

@@ -34,18 +34,31 @@ public class GameManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        SoundManager.Instance.SeleccionAudio(0);
         SceneManager.LoadScene(2);
     }
 
     public void LevelFinisher()
     {
-        Global.nivelMaximo ++;
         scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.buildIndex + 1);
-        SFXManager.Instance.CuentaRegresivaSound();
-        SoundManager.Instance.SeleccionAudio(1);
-        //uwu
-        PlayerPrefs.SetInt("LevelMax",Global.nivelMaximo);
+        if(scene.buildIndex == 3)
+        {
+            Global.nivelMaximo = 0;
+            PlayerPrefs.SetInt("LevelMax",Global.nivelMaximo);
+            SoundManager.Instance.SeleccionAudio(0);
+            SceneManager.LoadScene(2);
+        }
+        else
+        {
+            Global.nivelMaximo ++;
+        
+            SceneManager.LoadScene(scene.buildIndex + 1);
+            SFXManager.Instance.CuentaRegresivaSound();
+            SoundManager.Instance.SeleccionAudio(1);
+            //uwu
+            PlayerPrefs.SetInt("LevelMax",Global.nivelMaximo);
+        }
+        
     }
 
     public void Choque()
@@ -55,9 +68,10 @@ public class GameManager : MonoBehaviour
         
         if(Global.vidas == 0)
         {
+            InGameMenuManager.Instance.DeathMenu();
             Debug.Log("Dead");
             isPlaying = false;
-            //InGameMenuManager.Instance.restartButton.SetActive(true);
+            
         }   
     }
 

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class InGameMenuManager : MonoBehaviour
 {
     public static InGameMenuManager Instance;
+    public GameObject deathMenu;
+    public GameObject pauseButton;
 
     //public GameObject restartButton;
     // Start is called before the first frame update
@@ -34,5 +36,20 @@ public class InGameMenuManager : MonoBehaviour
     {
         GameManager.Instance.LoadMainMenu();
         SoundManager.Instance.SeleccionAudio(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void DeathMenu()
+    {
+        
+        
+        deathMenu.SetActive(true);
+        pauseButton.SetActive(false);
+
+        Debug.Log("deathMenu");
     }
 }
